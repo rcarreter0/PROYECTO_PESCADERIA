@@ -50,7 +50,6 @@ public class RecogidaPendiente implements EstadoPedido
     /**
      * @return El nombre en formato texto de la clase en la que nos ubicamos actualmente, RecogidaPendiente
      */
-    @Override
     public String toString() {
         return "RecogidaPendiente";
     }

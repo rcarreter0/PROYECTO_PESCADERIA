@@ -292,7 +292,7 @@ public class Pedido
                     System.out.println("Nombre del Cliente/Restaurante");
 
                     //tenemos que seleccionar a clientes ya almacenados
-                    System.out.print("Por que Cliente/Restaurante lo quieres cambiar");
+                    System.out.println("Por que Cliente/Restaurante lo quieres cambiar");
                     for(int i=0; i<clientes.size(); i++)
                         if(clientes.get(i)instanceof Restaurante)
                             System.out.println("RESTAURANTE "+i+" -> "+((Restaurante)clientes.get(i)).getNomRest());

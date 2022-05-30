@@ -86,7 +86,7 @@ public class Pescaderia
                             case 2://almacenar un nuevo cliente                         //FALLA LA ORDENACION
                                 System.out.println("\nIntroduce datos completos del Nuevo PEDIDO: ");
 
-                                System.out.println("Para que Cliente/General.Restaurante es");
+                                System.out.println("Para que Cliente/Restaurante es");
                                 for(int i=0; i<clientes.size(); i++)
                                     if(clientes.get(i)instanceof Restaurante)
                                      System.out.println("RESTAURANTE "+i+" -> "+((Restaurante)clientes.get(i)).getNomRest());

@@ -279,7 +279,7 @@ public class Pedido
             System.out.println("4.Descripcion:");
             System.out.println("5.Estado del pedido:");
             System.out.println("6.NUEVO detalle del pedido");
-            System.out.println("7.Detalles del General.Pedido:");
+            System.out.println("7.Detalles del Pedido:");
             System.out.println("0.ATRAS");
 
 

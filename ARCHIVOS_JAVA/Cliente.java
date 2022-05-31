@@ -81,7 +81,7 @@ public class Cliente
      */
     public int getTelefono()
     {
-        return telefono;
+        return this.telefono;
     }
 
         //GET SET DIRECCION

@@ -119,7 +119,7 @@ public class Utils
         clienteOrdenado(c, clientes);
 
         //11 CLIENTES
-        /*0*/c=new Persona( "Martin Vicente ", 725569742,"C/ 22061 Ahmad Highway","18/01/2013");
+        /*0*/c=new Persona( "Martin Vicente", 725569742,"C/ 22061 Ahmad Highway","18/01/2013");
         clienteOrdenado(c, clientes);
 
         /*1*/c=new Persona( "Vicente Bacete", 714368636,"C/ San Juan Bosco 94","24/12/1990");
@@ -128,28 +128,28 @@ public class Utils
         /*2*/c=new Persona( "Vicente Del Bosque", 681581593,"C/ 150 Lucie Roads","17/08/1992");
         clienteOrdenado(c, clientes);
 
-        /*3*/c=new Persona( "Maradona ", 776365080,"C/ 537 Ryley Square","06/11/1994");
+        /*3*/c=new Persona( "Maradona", 776365080,"C/ 537 Ryley Square","06/11/1994");
         clienteOrdenado(c, clientes);
 
-        /*4*/c=new Persona( "Oscar Garrido ", 634853631,"C/ 817 Thad Turnpike","21/09/2016");
+        /*4*/c=new Persona( "Oscar Garrido", 634853631,"C/ 817 Thad Turnpike","21/09/2016");
         clienteOrdenado(c, clientes);
 
-        /*5*/c=new Persona( "Sara Cano ", 726363961,"C/ 95026 Dorcas Squares","25/12/1987");
+        /*5*/c=new Persona( "Sara Cano", 726363961,"C/ 95026 Dorcas Squares","25/12/1987");
         clienteOrdenado(c, clientes);
 
-        /*6*/c=new Persona( "Gema Muñoz ", 638684111,"C/ 4686 Schoen Trail","14/12/2013");
+        /*6*/c=new Persona( "Gema Muñoz", 638684111,"C/ 4686 Schoen Trail","14/12/2013");
         clienteOrdenado(c, clientes);
 
-        /*7*/c=new Persona( "Angela-Maria Meseguer ", 634160910,"C/ 6742 Esperanza Path","05/11/2017");
+        /*7*/c=new Persona( "Angela-Maria Meseguer", 634160910,"C/ 6742 Esperanza Path","05/11/2017");
         clienteOrdenado(c, clientes);
 
-        /*8*/c=new Persona( "Ion Velasco ", 672953833,"C/ 57798 Valentine Parks","22/04/2021");
+        /*8*/c=new Persona( "Ion Velasco", 672953833,"C/ 57798 Valentine Parks","22/04/2021");
         clienteOrdenado(c, clientes);
 
-        /*9*/c=new Persona( "Paula Oliver ", 769948141,"C/ 4750 Marcos Islands","31/12/2006");
+        /*9*/c=new Persona( "Paula Oliver", 769948141,"C/ 4750 Marcos Islands","31/12/2006");
         clienteOrdenado(c, clientes);
 
-        /*10*/c=new Persona( "Filomena Cid ", 663059098,"C/ 31205 Fahey Ramp","02/11/2016");
+        /*10*/c=new Persona( "Filomena Cid", 663059098,"C/ 31205 Fahey Ramp","02/11/2016");
         clienteOrdenado(c, clientes);
 
 

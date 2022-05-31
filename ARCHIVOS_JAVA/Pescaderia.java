@@ -316,7 +316,7 @@ public class Pescaderia
                                     for(int i=0; i<clientes.size(); i++)
                                     {
                                         if(clientes.get(i) instanceof Restaurante)
-                                            System.out.println("Restaurante-" + i + " -> " + clientes.get(i).getFechaAlta()+" // "+clientes.get(i).getNombre());
+                                            System.out.println("Restaurante-" + i + " -> " + clientes.get(i).getFechaAlta()+" // "+((Restaurante)clientes.get(i)).getNomRest());
                                     }
 
                                     int mostrar=Utils.preguntarInt("Que Restaurante quieres CONSULTAR (numCliente)", 0, clientes.size()-1);
@@ -357,6 +357,8 @@ public class Pescaderia
                                 if(l2=='r' || l2=='R' || l2=='c' || l2=='C')
                                 {
                                     Cliente c=null;
+                                    boolean esta=false;
+                                    int j=0;
                                     if (l2 == 'r' || l2 == 'R')
                                     {
                                         System.out.println("\nIntroduce datos completos del Nuevo RESTAURANTE: ");
@@ -374,6 +376,19 @@ public class Pescaderia
                                         int telf2 = Utils.preguntarInt("Telefono del local Restaurante",0,1000000000);
 
                                         c = new Restaurante(nomJefe, telf1, dir, fA, nomRest, telf2);
+
+                                        while(j<clientes.size() && !esta)
+                                        {
+                                            Cliente c_almacenado=clientes.get(j);
+                                            if(c_almacenado instanceof Restaurante) {
+                                                if (((Restaurante)c).getTelRest() == ((Restaurante)c_almacenado).getTelRest() && ((Restaurante)c).getNomRest().equalsIgnoreCase(((Restaurante)c_almacenado).getNomRest())) {
+                                                    esta = true;
+                                                } else
+                                                    j++;
+                                            }
+                                            else j++;
+                                        }
+
                                     }
                                     else if (l2 == 'c' || l2 == 'C')
                                     {
@@ -389,27 +404,45 @@ public class Pescaderia
 
 
                                         c = new Persona(nomJefe, telf1, dir, fA);
+
+                                        while(j<clientes.size() && !esta)
+                                        {
+                                            Cliente c_almacenado=clientes.get(j);
+                                            if(c_almacenado instanceof Persona)
+                                            {
+                                                if ( c.getTelefono() == c_almacenado.getTelefono() && c.getNombre().equalsIgnoreCase(c_almacenado.getNombre()) ) {
+                                                    esta = true;
+                                                } else
+                                                    j++;
+                                            }else
+                                                j++;
+                                        }
                                     }
 
-                                    c.toString();
-
-                                    char respuesta=Utils.preguntarString("Desea almacenarlo en el sitema?(S/N)").charAt(0);
-
-                                    if(respuesta=='s' || respuesta=='S' )
+                                    if(esta==false)
                                     {
-                                        //ALMACENAMOS EN ORDEN DE FECHA LOS CLIENTES
-                                        Utils.clienteOrdenado(c, clientes);
-
                                         if(c instanceof Restaurante)
-                                            System.out.println("RESTAURANTE ALMACENADO CON EXITO");
+                                            ((Restaurante)c).mostrar();
                                         else
-                                            System.out.println("CLIENTE ALMACENADO CON EXITO");
+                                            ((Persona)c).mostrar();
+
+                                        char respuesta = Utils.preguntarString("Desea almacenarlo en el sitema?(S/N)").charAt(0);
+
+                                        if (respuesta == 's' || respuesta == 'S') {
+                                            //ALMACENAMOS EN ORDEN DE FECHA LOS CLIENTES
+                                            Utils.clienteOrdenado(c, clientes);
+
+                                            if (c instanceof Restaurante)
+                                                System.out.println("RESTAURANTE ALMACENADO CON EXITO");
+                                            else
+                                                System.out.println("CLIENTE ALMACENADO CON EXITO");
 
 
+                                        } else
+                                            System.out.println("No se ha almacenado el cliente registrado");
                                     }
                                     else
-                                        System.out.println("No se ha almacenado el cliente registrado");
-
+                                        System.out.println("Cliente/Restaurante ya registrado");
                                 }
                                 else
                                     System.out.println("NO SE HA ALMACENADO NINGUN TIPO DE CLIENTE\n OPCION INCORRECTA(R/C)");
@@ -527,19 +560,33 @@ public class Pescaderia
 
                                 Proveedor p = new Proveedor(nomJefe, telf1,nom, dir, fA);
 
-                                p.mostrar();
-
-                                char respuesta=Utils.preguntarString("Desea almacenarlo en el sitema?(S/N)").charAt(0);
-
-                                if(respuesta=='S' || respuesta=='s' )
+                                boolean esta=false;
+                                int j=0;
+                                while(j<proveedores.size() && !esta)
                                 {
-                                    //ALMACENAR ORDENADO POR FECHA(de mas nuevo a mas viejo)
-                                    Utils.proveedorOrdenado(p, proveedores);
-                                    System.out.println("PROVEEDOR ALMACENADO CON EXITO");
-
+                                    Proveedor p_almacenado=proveedores.get(j);
+                                    if(p.getTelEmp()==p_almacenado.getTelEmp() && p.getNomEmp().equalsIgnoreCase(p_almacenado.getNomEmp()) )
+                                    {
+                                        esta=true;
+                                    }
+                                    else
+                                        j++;
                                 }
-                                else
-                                    System.out.println("No se ha almacenado el cliente registrado");
+
+                                if(esta==false) {
+                                    p.mostrar();
+
+                                    char respuesta = Utils.preguntarString("Desea almacenarlo en el sitema?(S/N)").charAt(0);
+
+                                    if (respuesta == 'S' || respuesta == 's') {
+                                        //ALMACENAR ORDENADO POR FECHA(de mas nuevo a mas viejo)
+                                        Utils.proveedorOrdenado(p, proveedores);
+                                        System.out.println("PROVEEDOR ALMACENADO CON EXITO");
+
+                                    } else
+                                        System.out.println("No se ha almacenado el cliente registrado");
+                                }
+                                else System.out.println("Este provedor ya esta almacenado");
 
                                 break;
 

@@ -1,3 +1,9 @@
+/*
+ * Autor: Raul Carretero
+ * Nombre: PROYECTO PESCADERIA 1ºDAW
+ * Descripción: Archivo del paquete EstadosCompra
+ */
+
 /**
  * Clase PendientePago
  *

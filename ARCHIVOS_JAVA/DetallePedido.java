@@ -1,3 +1,9 @@
+/*
+ * Autor: Raul Carretero
+ * Nombre: PROYECTO PESCADERIA 1ºDAW
+ * Descripción: Archivo de la carpeta fuente
+ */
+
 /**
  * Clase DetallePedido
  *
